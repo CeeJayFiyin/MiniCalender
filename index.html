@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Mini Calender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="calender">
+            <div class="left">
+                <p id="date"> 06</p>
+                <p id="day"> Friday </p>
+            </div>
+            <div class="right">
+                <p id="month"> October </p>
+                <p id="year"> 2023 </p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // JavaScript code to populate the calendar
+        const dateElement = document.getElementById('date');
+        const dayElement = document.getElementById('day');
+        const monthElement = document.getElementById('month');
+        const yearElement = document.getElementById('year');
+
+        const currentDate = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+        dateElement.textContent = currentDate.getDate().toString().padStart(2, '0');
+        dayElement.textContent = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
+        monthElement.textContent = currentDate.toLocaleDateString('en-US', { month: 'long' });
+        yearElement.textContent = currentDate.getFullYear().toString();
+    </script>
+</body>
+
+</html>
